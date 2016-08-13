@@ -9,6 +9,7 @@ commands:
     aliases: gamemode
   difficulty:
     aliases: dif
+  msg:  
 permissions:
     xcommands.*:
         default: op
@@ -16,9 +17,12 @@ permissions:
             xcommands.kill: true
             xcommands.gm: true
             xcommands.difficulty: true
+            xcommands.msg: true            
     xcommands.kill:
       default: op
     xcommands.gm:
       default: op
     xcommands.difficulty:
+      default: op
+    xcommands.msg:
       default: op
