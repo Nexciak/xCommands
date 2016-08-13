@@ -15,33 +15,39 @@ public class CmdGamemode implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String arg2, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("gm")){
 			if(sender.hasPermission("xcommands.gm")){
+				
+				args[0] = args[0].replaceAll(String.valueOf(0), "Survival");
+				args[0] = args[0].replaceAll(String.valueOf(1), "Creative");
+				args[0] = args[0].replaceAll(String.valueOf(2), "Adventure");
+				args[0] = args[0].replaceAll(String.valueOf(3), "Spectator");
+				
 				if(args.length == 0){
 					sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUzyj &c/gm <tryb>"));
 					sender.sendMessage(StringUtils.colored("&c&m----------------------------"));
-					sender.sendMessage(StringUtils.colored("&3» &aSurvival &3| &71"));
-					sender.sendMessage(StringUtils.colored("&3» &aCreative &3| &72"));
-					sender.sendMessage(StringUtils.colored("&3» &aAdventure &3| &73"));
-					sender.sendMessage(StringUtils.colored("&3» &aSpectator &3| &74"));
+					sender.sendMessage(StringUtils.colored("&3» &aSurvival &3| &70"));
+					sender.sendMessage(StringUtils.colored("&3» &aCreative &3| &71"));
+					sender.sendMessage(StringUtils.colored("&3» &aAdventure &3| &72"));
+					sender.sendMessage(StringUtils.colored("&3» &aSpectator &3| &73"));
 					return true;
 				}
 				if(args.length == 1){
 					if(sender instanceof Player){
-						if(args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("1")){
+						if(args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("0")){
 							((Player) sender).setGameMode(GameMode.SURVIVAL);
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0]));
 							return true;
 						}
-						if(args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("2")){
+						if(args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("1")){
 							((Player) sender).setGameMode(GameMode.CREATIVE);
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0]));
 							return true;
 						}
-						if(args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("3")){
+						if(args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("2")){
 							((Player) sender).setGameMode(GameMode.ADVENTURE);
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0]));
 							return true;
 						}
-						if(args[0].equalsIgnoreCase("spectator") || args[0].equalsIgnoreCase("4")){
+						if(args[0].equalsIgnoreCase("spectator") || args[0].equalsIgnoreCase("3")){
 							((Player) sender).setGameMode(GameMode.SPECTATOR);
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0]));
 							return true;
@@ -57,25 +63,25 @@ public class CmdGamemode implements CommandExecutor {
 							return true;	
 						}
 						Player p = Bukkit.getPlayer(args[1]);
-						if(args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("1")){
+						if(args[0].equalsIgnoreCase("survival") || args[0].equalsIgnoreCase("0")){
 							p.setGameMode(GameMode.SURVIVAL);
 							p.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &aprzez &9" + sender.getName()));
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &adla &9" + sender.getName()));
 							return true;
 						}
-						if(args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("2")){
+						if(args[0].equalsIgnoreCase("creative") || args[0].equalsIgnoreCase("1")){
 							p.setGameMode(GameMode.CREATIVE);
 							p.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &aprzez &9" + sender.getName()));
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &adla &9" + sender.getName()));
 							return true;
 						}
-						if(args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("3")){
+						if(args[0].equalsIgnoreCase("adventure") || args[0].equalsIgnoreCase("2")){
 							p.setGameMode(GameMode.ADVENTURE);
 							p.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &aprzez &9" + sender.getName()));
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &adla &9" + sender.getName()));
 							return true;
 						}
-						if(args[0].equalsIgnoreCase("spectator") || args[0].equalsIgnoreCase("4")){
+						if(args[0].equalsIgnoreCase("spectator") || args[0].equalsIgnoreCase("3")){
 							p.setGameMode(GameMode.SPECTATOR);
 							p.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &aprzez &9" + sender.getName()));
 							sender.sendMessage(StringUtils.colored("&6GameMode &3| &aUstawiono tryb &c" + args[0] + " &adla &9" + sender.getName()));

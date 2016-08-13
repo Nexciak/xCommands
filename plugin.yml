@@ -7,13 +7,18 @@ commands:
     aliases: zabij
   gm:
     aliases: gamemode
+  difficulty:
+    aliases: dif
 permissions:
     xcommands.*:
         default: op
         children:
             xcommands.kill: true
             xcommands.gm: true
+            xcommands.difficulty: true
     xcommands.kill:
       default: op
     xcommands.gm:
+      default: op
+    xcommands.difficulty:
       default: op
