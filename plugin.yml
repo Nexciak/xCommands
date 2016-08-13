@@ -1,0 +1,14 @@
+name: xCommands
+description: xNetwork | Plugin odpowiadajacy za komendy
+main: me.nexciak.xcommands.Main
+version: 1.0
+commands:
+  kill:
+    aliases: zabij
+permissions:
+    xcommands.*:
+        default: op
+        children:
+            xcommands.kill: true
+    xcommands.kill:
+      default: op
