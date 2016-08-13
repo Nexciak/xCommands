@@ -5,10 +5,15 @@ version: 1.0
 commands:
   kill:
     aliases: zabij
+  gm:
+    aliases: gamemode
 permissions:
     xcommands.*:
         default: op
         children:
             xcommands.kill: true
+            xcommands.gm: true
     xcommands.kill:
+      default: op
+    xcommands.gm:
       default: op
